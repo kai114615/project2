@@ -22,11 +22,6 @@ from member import views as m_v
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('member/', include('member.urls'))
-    # path('country/', h_v.country),
-    # path('categories/', h_v.categories),
-    # path('', m_v.index),
-    # path('cities/', h_v.cities),
-    # path('', m_v.mobile),
-    # path('register/', m_v.register)
+    path('member/', include('member.urls')),
+    path('store/', include('myapp.urls'))
 ]
