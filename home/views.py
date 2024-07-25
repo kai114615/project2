@@ -31,3 +31,6 @@ def cities(request):
     cities = Sakila.cities(id)
     print(cities)
     return render(request, 'home/cities.html', {'cities': cities, 'country': country})
+
+def about(request):
+    return render(request, 'home/about.html')
