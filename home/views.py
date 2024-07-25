@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Sakila
+from datetime import datetime
 
 # Create your views here.
 
@@ -32,5 +33,10 @@ def cities(request):
     print(cities)
     return render(request, 'home/cities.html', {'cities': cities, 'country': country})
 
-def about(request):
+def about(request, year=None):
+    if year is None:
+        html = "<h2>關於{}年的我們</h2>".format(datetime.now().year)
+    else:
+        html = "<h2>關於{}年的我們</h2>".format(year)
+    print(html)
     return render(request, 'home/about.html')
