@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Home Page</h2>
+    <a href="/?id=1">Item1</a>
+    <a href="/?id=28">Ecuador</a>
+    <div>
+      <form method="post">
+        {% csrf_token %}<!-- 此語法避免出現安全機制而被擋下無法顯示頁面 -->
+        <input type="text" name="country" placeholder="請輸入國家名稱" />
+        <button type="submit">送出</button>
+      </form>
+    </div>
+    <p>根據國家代號 {{ id }} 讀出相關資料</p>
+    <p>國家名稱 : {{ country }}</p>
+  </body>
+</html>

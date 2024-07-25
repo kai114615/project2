@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>會員註冊</h2>
+    <form method="post" enctype="multipart/form-data">
+      <!-- enctype="multipart/form-data" 此語法才不會顯示None -->
+      {% csrf_token %}
+      <div>
+        <input type="text" name="username" placeholder="請輸入姓名" />
+      </div>
+      <div>
+        <input type="email" name="usermail" placeholder="請輸入電子信箱" />
+      </div>
+      <div>
+        <input type="file" name="avator">
+      </div>
+      <button type="submit">註冊</button>
+    </form>
+  </body>
+</html>
