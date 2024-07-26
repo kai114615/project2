@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+
+{% block style %}
+<style>
+    h3 {
+        color: blue;
+    }
+
+    p {
+        background-color: lightskyblue;
+    }
+</style>
+{% endblock %}
+
+{% block script %}
+<script>
+    const theP = document.querySelector('p')
+    theP.addEventListener('mouseover', () => {
+        theP.style.backgroundColor = 'lightgreen'
+    })
+    theP.addEventListener('mouseout', () => {
+        theP.style.backgroundColor = 'lightred'
+    })
+</script>
+{% endblock %}
+
+
+{% block title %}
+<h3>{{ title|title }}</h3>
+{% endblock %}
+
+
+{% block content %}
+<p>這是來自 show templates 的內容</p>
+{% endblock %}

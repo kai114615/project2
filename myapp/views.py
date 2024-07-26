@@ -8,6 +8,7 @@ def index(request):
     store_title = '商城首頁'
     now = datetime.now()
     id = 'kuytrhgefsadfhnfnhmjuiyktrjhesfdghcfuytdref'
+    value1 = ['123', ['456', '789', ['01112', '131415', '161718']], '192021']
 
     # locals功能可將參數自動整理成{dict}的形式來呈現
     return render(request, 'myapp/index.html', locals())  
@@ -23,3 +24,6 @@ def blog(request, publish=None):
 
 def course(request, course_name=None):
     return HttpResponse(f'<h2>課程名稱：{course_name}</h2>')
+
+def show(request):
+    return render(request, 'myapp/show.html', {'title':'store show'})
