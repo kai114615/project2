@@ -8,7 +8,9 @@ def index(request):
     store_title = '商城首頁'
     now = datetime.now()
     id = 'kuytrhgefsadfhnfnhmjuiyktrjhesfdghcfuytdref'
-    return render(request, 'myapp/index.html', locals())  # locals功能可將參數自動整理成{dict}的形式來呈現
+
+    # locals功能可將參數自動整理成{dict}的形式來呈現
+    return render(request, 'myapp/index.html', locals())  
 
 def about(request, year=datetime.now().year):
     return HttpResponse(f'<h2>About {year} </h2>')
