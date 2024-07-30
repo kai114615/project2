@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+
+<p>abc Page</p>
+<p>{{ user }}</p>
+{{ users }}
+
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>電子郵件</th>
+            <th>年齡</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for aUser in user|dictsort:'age' %}
+
+        <tr class="{% cycle 'table-success' 'table-warning' %}">
+            <td>{{aUser.name}}</td>
+            <td>{{aUser.email}}</td>
+            <td>{{aUser.age}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

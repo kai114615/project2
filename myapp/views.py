@@ -27,3 +27,11 @@ def course(request, course_name=None):
 
 def show(request):
     return render(request, 'myapp/show.html', {'title':'store show'})
+
+def abc(request):
+    user = {'name': 'Jack', 'age': 26}
+    users = [{'name': 'Jack', 'email': 'fghtjukjhfhgsd@gmail.com', 'age': 23}, 
+             {'name': 'Patrick', 'email': '34567uhgfdsasdfvg@gmail.com', 'age': 19}, 
+             {'name': 'Sean', 'email': 'sdfg789fghnj0987xdcv23wedf7uh@gmail.com', 'age': 28}]
+    title = 'Template 練習'
+    return render(request, 'myapp/abc.html', locals())
