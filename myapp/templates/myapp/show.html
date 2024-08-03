@@ -3,6 +3,10 @@
 
 
 {% block style %}
+{% endblock %}
+
+
+{% block title %}
 <style>
     h3 {
         color: blue;
@@ -12,26 +16,24 @@
         background-color: lightskyblue;
     }
 </style>
-{% endblock %}
 
-{% block script %}
-<script>
-    const theP = document.querySelector('p')
-    theP.addEventListener('mouseover', () => {
-        theP.style.backgroundColor = 'lightgreen'
-    })
-    theP.addEventListener('mouseout', () => {
-        theP.style.backgroundColor = 'lightred'
-    })
-</script>
-{% endblock %}
-
-
-{% block title %}
 <h3>{{ title|title }}</h3>
 {% endblock %}
 
 
 {% block content %}
 <p>這是來自 show templates 的內容</p>
+
+<script>
+    const theP = document.querySelector('p')
+    theP.addEventListener('mouseover', () => {
+        theP.style.backgroundColor = 'lightyellow'
+    })
+    theP.addEventListener('mouseout', () => {
+        theP.style.backgroundColor = 'lightgreen'
+    })
+</script>
+{% endblock %}
+
+{% block script %}
 {% endblock %}
