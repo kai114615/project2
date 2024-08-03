@@ -1,6 +1,6 @@
-{% extends "base.html" %} 
+{% extends 'base.html' %}
 
-{% load static %} 
+{% load static %}
 {% block title %}
 <h2>關於我們</h2>
 {% endblock %}
@@ -8,6 +8,8 @@
 
 {% block content %}
 <h2>About{{year}}</h2>
-<img src="{% static 'images/野營活動4-e1672740513582.jpg' %}" alt="" style="width: 25%">
-<img src="{% static 'images/Alecive-Flatwoken-Apps-Google-Maps.512.png' %}" alt="" style="width: 25%">
+<img src="{% static 'images/野營活動4-e1672740513582.jpg' %}" alt="" style="width: 100%" />
+<img src="{% static 'images/logo.svg' %}" alt="" style="width: 25%" />
+<img src="{% static 'images/Alecive-Flatwoken-Apps-Google-Maps.512.png' %}" alt="" style="width: 25%" />
+<img src="{% static 'images/react.svg' %}" alt="" style="width: 25%" />
 {% endblock %}

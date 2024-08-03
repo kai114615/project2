@@ -2,18 +2,17 @@
 
 {% block content %}
 
-<h2>{{ store_title }} {{ now }}</h2>
+<p>{{ now }}</p>
 <p>ID：{{ id }}</p>
 
 <p>{{title|slice:"1:3"}}</p>
-<p>{{now|date:"Y/m/d"}}</p>
+<p>{{now|date:"Y/m/d D"}}</p>
 <p>{{now|time:"H:i:s A"}}</p>
 
 <div>{{value1|unordered_list}} </div>
 
 {% endblock %}
 
-
 {% block title %}
-<h2>{{title|title}}</h2>
+<h2>{{store_title|title}}</h2>
 {% endblock %}
