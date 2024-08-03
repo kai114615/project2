@@ -1,8 +1,21 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
 
+
+
+{% block content %}
 <p>abc Page</p>
 <p>{{ user }}</p>
-{{ users }}
+
+{% if user.age >= 40 %}
+<p style="background-color: tomato;color: darkblue;">{{ user.name }}</p>
+{% elif user.age >= 20 %}
+<p style="background-color: lightgoldenrodyellow;color: darkblue ;">{{ user.name }}</p>
+{% else  %}
+<p style="background-color: chartreuse;color: darkolivegreen;">{{ user.name }}</p>
+{% endif %}
+<hr>
+<p>{{ users }}</p>
+
 
 <table class="table table-bordered border-primary">
     <thead>
@@ -16,12 +29,16 @@
         {% for aUser in user|dictsort:'age' %}
 
         <tr class="{% cycle 'table-success' 'table-warning' %}">
-            <td>{{aUser.name}}</td>
-            <td>{{aUser.email}}</td>
-            <td>{{aUser.age}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.age}}</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 
-{% endblock %}
+{% endblock  %}
+
+{% block title %}
+<h2>{{title}}</h2>
+{% endblock  %}
