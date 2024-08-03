@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-hant-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+{% extends "base.html" %}
+
+{% block title %}
     <h2>Home Page</h2>
-    <a href="/?id=1">Item1</a>
+{% endblock  %}
+
+
+{% block content %}
+<a href="/?id=1">Item1</a>
     <a href="/?id=28">Ecuador</a>
     <div>
       <form method="post">
@@ -18,5 +17,6 @@
     </div>
     <p>根據國家代號 {{ id }} 讀出相關資料</p>
     <p>國家名稱 : {{ country }}</p>
-  </body>
+{% endblock  %}
+
 </html>

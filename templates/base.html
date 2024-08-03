@@ -12,6 +12,8 @@
       crossorigin="anonymous"
     /> -->
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}" />
+    {% block style %}
+    {% endblock  %}
   </head>
   <body>
     <div class="container">
@@ -30,6 +32,8 @@
           {% endblock %}
         </div>
       </div>
+
+      {% include "footer.html" %}
     </div>
     <!-- <h1>Hello, world!</h1> -->
     <!-- <script
@@ -38,5 +42,7 @@
       crossorigin="anonymous"
     ></script> -->
     <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+    {% block script %}
+    {% endblock  %}
   </body>
 </html>

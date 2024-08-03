@@ -1,12 +1,6 @@
 {% extends "base.html" %}
 
-
-
 {% block style %}
-{% endblock %}
-
-
-{% block title %}
 <style>
     h3 {
         color: blue;
@@ -16,14 +10,9 @@
         background-color: lightskyblue;
     }
 </style>
-
-<h3>{{ title|title }}</h3>
 {% endblock %}
 
-
-{% block content %}
-<p>這是來自 show templates 的內容</p>
-
+{% block script %}
 <script>
     const theP = document.querySelector('p')
     theP.addEventListener('mouseover', () => {
@@ -35,5 +24,14 @@
 </script>
 {% endblock %}
 
-{% block script %}
+
+
+{% block title %}
+<h3>{{ title|title }}</h3>
 {% endblock %}
+
+
+{% block content %}
+<p>這是來自 show templates 的內容</p>
+{% endblock %}
+
