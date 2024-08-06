@@ -10,7 +10,12 @@ class Category:
         try:
             with connection.cursor() as cursor:
                 cursor.execute(sql)
-                categories = cursor.fetchall()
+                tuple_categories = cursor.fetchall()
+                print(tuple_categories)
+
+                # 將tuple 轉成 list 型別
+                categories = [{'id':category[0], 'name':category[1]} for category in tuple_categories]
+                print(categories)
                 return categories
         except DatabaseError as e:
             print(f"讀取資料錯誤: {e}")

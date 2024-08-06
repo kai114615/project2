@@ -36,7 +36,8 @@
 <ul>
     {% for category in categories %}
     <li>
-        {{category.0}} - {{category.1}}
+        {{category.id}} - {{category.name}}
+        <!-- 資料型別轉型之後，原先的index 就要改成key -->
     </li>
     {% endfor %}
 </ul>
