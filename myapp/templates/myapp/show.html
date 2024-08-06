@@ -33,5 +33,12 @@
 
 {% block content %}
 <p>這是來自 show templates 的內容</p>
+<ul>
+    {% for category in categories %}
+    <li>
+        {{category.0}} - {{category.1}}
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
 
