@@ -1,6 +1,10 @@
 {% extends "base.html" %} {% block style %} {% endblock %} {% block title %}
 <h3>會員管理</h3>
-{% endblock %} {% block content %}
+{% endblock %}
+
+
+{% block content %}
+<a href="{% url "member:register" %}" class="btn btn-primary">新增</a>
 <table class="table table-bordered">
   <thead>
     <tr>
