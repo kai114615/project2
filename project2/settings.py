@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'member',
-    'myapp'
+    'myapp',
+    'sakila'
 ]
 
 MIDDLEWARE = [
@@ -81,8 +82,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sakila',
         'USER': 'root',
-        'PASSWORD': 'kai114615',   #公司SQL
-        # 'PASSWORD': 'Kai114615',    #家裡SQL
+        # 'PASSWORD': 'kai114615',   #公司SQL
+        'PASSWORD': 'Kai114615',    #家裡SQL
         'HOST': 'localhost',
         'PORT': 3306
     }
