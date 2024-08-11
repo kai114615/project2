@@ -110,3 +110,15 @@ def register(request):
 
         # print(f'upload file:{upload_file}')
     return render(request, 'member/register.html')
+
+
+def edit(request):
+    id = request.GET.get('id', 30)
+    member = Member.objects.get(member_id=id)
+    return render(request, 'member/edit.html', locals())
+
+
+def delete(request, id):
+    member = Member.objects.get(member_id=id)
+    member.delete()
+    return redirect('member:index')
