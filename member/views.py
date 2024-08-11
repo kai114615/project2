@@ -62,7 +62,10 @@ def index(request):
     # member = Member.objects.get(member_id=14)
     # member.delete()
 
-    return HttpResponse('資料庫操作練習')
+    # return HttpResponse('資料庫操作練習')
+    # 讀取會員所有資料
+    members = Member.objects.all()
+    return render(request, 'member/index.html', locals())
 
 
 def mobile(request):

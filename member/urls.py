@@ -1,8 +1,9 @@
 from django.urls import path
 from member import views
 
+app_name = 'member'
 urlpatterns = [
-    path('', views.index),
-    path('mobile/', views.mobile),
-    path('register/', views.register)
+    path('', views.index, name='index'),
+    path('mobile/', views.mobile, name='mobile'),
+    path('register/', views.register, name='register')
 ]
