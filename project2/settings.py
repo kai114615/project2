@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -83,7 +84,7 @@ DATABASES = {
         'NAME': 'sakila',
         'USER': 'root',
         # 'PASSWORD': 'kai114615',   #公司SQL
-        'PASSWORD': 'Kai114615',    #家裡SQL
+        'PASSWORD': 'Kai114615',  # 家裡SQL
         'HOST': 'localhost',
         'PORT': 3306
     }

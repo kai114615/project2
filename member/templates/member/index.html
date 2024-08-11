@@ -18,9 +18,18 @@
       <td>{{member.member_name}}</td>
       <td>{{member.member_birth}}</td>
       <td>{{member.member_email}}</td>
-      <td>{{member.member_avatar}}</td>
+      <td>
+        <img
+          style="width: 80px"
+          alt="{{member.member_name}}"
+          src="{{MEDIA_URL}}{{member.member_avatar}}"
+        />
+      </td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
-{% endblock %} {% block scripts %} {% endblock %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -45,7 +45,7 @@ def index(request):
     # )
 
     # 讀取所有會員資料
-    # members = Member.objects.all()
+    members = Member.objects.all()
     # print(members)
 
     # # 讀取單筆資料
@@ -59,12 +59,12 @@ def index(request):
     # member.save()  # 有修改就要有儲存
 
     # 刪除
-    # member = Member.objects.get(member_id=14)
+    # member = Member.objects.get(member_id=28)
     # member.delete()
 
     # return HttpResponse('資料庫操作練習')
     # 讀取會員所有資料
-    members = Member.objects.all()
+    # members = Member.objects.all()
     return render(request, 'member/index.html', locals())
 
 
