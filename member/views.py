@@ -74,7 +74,7 @@ def mobile(request):
 
 def register(request):
     if request.method == 'POST':  # 要大寫   #把資料透過body標籤中的封包傳遞
-        name = request.POST.get('username')
+        name = request.POST.get('userid')
         email = request.POST.get('useremail')
         password = request.POST.get('userpassword')
         birth = request.POST.get('userbirth')
@@ -113,6 +113,30 @@ def register(request):
 
 
 def edit(request):
+    if request.method == 'POST':
+        id = request.POST.get('userid')
+        name = request.POST.get('username')
+        email = request.POST.get('useremail')
+        birth = request.POST.get('userbirth')
+
+        # 接收上傳的檔案
+        avator = request.FILES.get('userphoto')
+        # 檔案名稱
+        file_name = avator.name
+
+        # 上傳檔案儲存到 uploads資料夾
+        fs = FileSystemStorage()
+        upload_file = fs.save(file_name, avator)
+
+        # 修改到資料庫
+        member = Member.objects.get(member_id=id)
+        member.member_name = name
+        member.member_email = email
+        member.member_birth = birth
+        member.member_avatar = upload_file
+        member.save()  # 有修改就要有儲存
+        return redirect('member:index')
+
     id = request.GET.get('id', 30)
     member = Member.objects.get(member_id=id)
     return render(request, 'member/edit.html', locals())

@@ -13,6 +13,7 @@
       <!-- enctype="multipart/form-data" 此語法才不會顯示None -->
       {% csrf_token %}
       <div>
+        <input type="hidden" name="userid" value="{{member.member_id}}" />
         <input type="text" name="username" placeholder="請輸入姓名" value="{{member.member_name}}" />
       </div>
       <div>
@@ -26,7 +27,8 @@
         <br>
         <img style="width: 300px" src="{{MEDIA_URL}}{{member.member_avatar}}" alt="{{member.member_name}}">
       </div>
-      <button type="submit">註冊</button>
+      <button type="submit">修改
+      </button>
     </form>
   </body>
 </html>
